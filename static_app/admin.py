@@ -1,0 +1,16 @@
+from django.contrib import admin
+from .models import *
+admin.site.register(Banner)
+admin.site.register(WorkWith)
+admin.site.register(About)
+admin.site.register(CompanyStatus)
+admin.site.register(Portfolio)
+admin.site.register(Services)
+admin.site.register(FAQ)
+admin.site.register(Team)
+admin.site.register(Testimonial)
+admin.site.register(Blog)
+admin.site.register(ContactUs)
+admin.site.register(CustomerService)
+admin.site.register(GlobalSetting)
+admin.site.register(Heading)
