@@ -12,7 +12,7 @@
       <nav class="breadcrumbs">
         <div class="container" style="margin-top:revert; !impotant">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
             <li class="current">Blog List</li>
           </ol>
         </div>
@@ -40,7 +40,7 @@
             <article>
 
               <div class="post-img">
-                <img src="{{i.blog_image}}" alt="" class="img-fluid">
+                <img src="{{i.blog_image.url}}" alt="" class="img-fluid">
               </div>
 
               <p class="post-category">{{i.blog_type}}</p>
@@ -71,10 +71,10 @@
 
  
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  {% comment %} <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader"></div>
+  <div id="preloader"></div> {% endcomment %}
 
 
 

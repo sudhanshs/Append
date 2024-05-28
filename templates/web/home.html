@@ -13,8 +13,8 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section">
-
-      <img src='{{banner.image}}' alt="" data-aos="fade-in">
+      
+      <img src='{{banner.image.url}}' alt="" data-aos="fade-in">
 
       <div class="container">
         <div class="row">
@@ -79,8 +79,8 @@
           <div class="col-xl-5 content">
             <h3>About Us</h3>
             <h2>{{about1.title}}</h2>
-            <p>{{about1.content}}</p>
-            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            <p>{{about1.content|safe}}</p>
+            <a href="{% url 'about_us' %}" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
           </div>
 
           <div class="col-xl-7">
@@ -100,7 +100,7 @@
                   <i class="bi bi-graph-up-arrow"></i>
                 {% endif %}
                   <h3>{{i.title}}</h3>
-                  <p>{{i.content}}</p>
+                  <p>{{i.content|safe}}</p>
                 </div>
               </div> <!-- End Icon Box -->
               {% endif %}
@@ -344,11 +344,11 @@
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
             {% for i in portfolio %}
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{i.type}}">
-              <img src='{{i.image}}' class="img-fluid" alt="">
+              <img src='{{i.image.url}}' class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>{{i.title}}</h4>
                 <p>{{i.content}}</p>
-                <a href="{{i.image}}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{{i.image.url}}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a target="_blank" href="{{i.url}}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
@@ -601,7 +601,7 @@
           {% for i in teams %}
           <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
             <div class="member-img">
-              <img src='{{i.image}}' class="img-fluid" alt="">
+              <img src='{{i.image.url}}' class="img-fluid" alt="">
               <div class="social">
                 <a href="#"><i class="bi bi-twitter"></i></a>
                 <a href="#"><i class="bi bi-facebook"></i></a>
@@ -764,7 +764,7 @@
                 <div class="swiper-slide">
                   <div class="testimonial-item">
                     <div class="d-flex">
-                      <img src={{i.testimonial_image}} class="testimonial-img flex-shrink-0" alt="">
+                      <img src={{i.testimonial_.url}} class="testimonial-img flex-shrink-0" alt="">
                       <div>
                         <h3>{{i.name}}</h3>
                         <h4>{{i.designation}}</h4>
@@ -890,7 +890,7 @@
             <article>
 
               <div class="post-img">
-                <img src='{{i.blog_image}}' alt="" class="img-fluid">
+                <img src='{{i.blog_image.url}}' alt="" class="img-fluid">
               </div>
 
               <p class="post-category">{{i.blog_type}}</p>

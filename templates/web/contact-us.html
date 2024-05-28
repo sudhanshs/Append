@@ -15,7 +15,7 @@
         <nav class="breadcrumbs">
             <div class="container">
             <ol>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
                 <li class="current">Contact Us</li>
             </ol>
             </div>
@@ -29,7 +29,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>{{heading.contact}}</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -119,11 +119,11 @@
   </main>
 
  
-  <!-- Scroll Top -->
+  {% comment %} <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader"></div>
+  <div id="preloader"></div> {% endcomment %}
 
 </body>
 {% include 'web/base/footer.html' %}

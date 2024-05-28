@@ -66,6 +66,7 @@ def AboutUs(request):
 
 def ContactUS(request):
     template_name="web/contact-us.html"
+    heading=Heading.objects.get(id=1)
     costomer_service=CustomerService.objects.get(id=1)
     if request.POST:
         name=request.POST.get('name')
@@ -77,7 +78,7 @@ def ContactUS(request):
             messages.error(request,"email requried")
         messages.success(request,'Mail sent successfully !!')
         return redirect(request.META['HTTP_REFERER'])
-    return render(request, template_name,{'costomer_service':costomer_service})
+    return render(request, template_name,{'costomer_service':costomer_service,'heading':heading})
 
 
 def GivaHome(request):
