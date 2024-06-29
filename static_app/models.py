@@ -47,7 +47,7 @@ class Portfolio(models.Model):
 
 class Services(models.Model):
     title = models.CharField(max_length=250, null=True, blank=True)
-    content = models.CharField(max_length=250, null=True, blank=True)
+    content = RichTextField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
     created_at = models.DateField(auto_now_add=True)
     slug = models.CharField(max_length=250, unique=True, default=uuid.uuid4)

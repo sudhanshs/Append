@@ -79,8 +79,8 @@
           <div class="col-xl-5 content">
             <h3>About Us</h3>
             <h2>{{about1.title}}</h2>
-            <p>{{about1.content|safe}}</p>
-            <a href="{% url 'about_us' %}" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            <p>{{about1.content|safe|truncatechars:30}}</p><a href="{% url 'about_us' %}">
+            <a href="{% url 'about_us' %}" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a></a>
           </div>
 
           <div class="col-xl-7">
@@ -209,7 +209,7 @@
               {% endif %}
               </i></div>
               <div>
-                <h4 class="title"><a href="services-details.html" class="stretched-link">{{i.title}}</a></h4>
+                <h4 class="title"><a class="stretched-link">{{i.title}}</a></h4>
                 <p class="description">{{i.content}}</p>
               </div>
             </div>

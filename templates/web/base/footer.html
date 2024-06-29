@@ -3,7 +3,7 @@
 
     <div class="container footer-top">
       <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
+        <div class="col-lg-3 col-md-12 footer-about">
           <a href="{% url 'home' %}" class="logo d-flex align-items-center">
             <span class="sitename">Append</span>
           </a>
@@ -21,24 +21,25 @@
           <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about_us' %}">About us</a></li>
-            {% comment %} <li><a href="#">Services</a></li> {% endcomment %}
-            {% comment %} <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li> {% endcomment %}
+            <li><a href="{% url 'blog_list' %}">Blog</a></li>
+            <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
           </ul>
         </div>
-
-        <div class="col-lg-2 col-6 footer-links">
+        <div class="col-lg-5 col-6 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li>Web Design</li>
-            <li>Web Development</li>
-            <li>Product Management</li>
-            <li>Marketing</li>
-            <li>Graphic Design</li>
+            <div class="row">
+              {% for i in services %}
+                <div class="col-md-6">
+                  <li>{{i.title}}</li>
+                </div>
+              {% endfor %}
+            </div>
           </ul>
         </div>
+            
 
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+        <div class="col-lg-2 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
           <p>{{costomer_service.address}}</p>
           <p class="mt-4"><strong>Phone:</strong> <span>{{costomer_service.tollfree1}}</span></p>

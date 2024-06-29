@@ -39,7 +39,7 @@
             <img src="{% static 'assets/img/services.jpg' %}" alt="" class="img-fluid services-img">
             <h3>{{about.title}}</h3>
             <p>
-              {{about.content}}
+              {{about.content| safe}}
             </p>
           </div>
             <div class="help-box d-flex flex-column justify-content-center align-items-center">
