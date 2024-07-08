@@ -34,17 +34,18 @@
     </section><!-- /Hero Section -->
 
     <!-- Clients Section -->
+    {% if clients %}
     <section id="clients" class="clients section">
 
       <div class="container" data-aos="fade-up">
 
         <div class="row gy-4">
-
+          {% for i in clients %}
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src='{% static "img/clients/client-1.png" %}' class="img-fluid" alt="">
+            <img src='{{i.image.url}}' class="img-fluid" alt="">
           </div><!-- End Client Item -->
-
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
+          {% endfor %}
+          {% comment %} <div class="col-xl-2 col-md-3 col-6 client-logo">
             <img src='{% static "img/clients/client-2.png" %}' class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
@@ -62,15 +63,17 @@
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
             <img src='{% static "img/clients/client-6.png" %}' class="img-fluid" alt="">
-          </div><!-- End Client Item -->
+          </div><!-- End Client Item --> {% endcomment %}
 
         </div>
 
       </div>
 
     </section><!-- /Clients Section -->
+    {% endif %}
 
     <!-- About Section -->
+    {% if about %}
     <section id="about" class="about section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -105,30 +108,6 @@
               </div> <!-- End Icon Box -->
               {% endif %}
               {% endfor %}
-              {% comment %} <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon-box">
-                  <i class="bi bi-clipboard-pulse"></i>
-                  <h3>Rerum aperiam</h3>
-                  <p>Autem saepe animi et aut aspernatur culpa facere. Rerum saepe rerum voluptates quia</p>
-                </div>
-              </div> <!-- End Icon Box -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="icon-box">
-                  <i class="bi bi-command"></i>
-                  <h3>Veniam omnis</h3>
-                  <p>Omnis perferendis molestias culpa sed. Recusandae quas possimus. Quod consequatur corrupti</p>
-                </div>
-              </div> <!-- End Icon Box -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="icon-box">
-                  <i class="bi bi-graph-up-arrow"></i>
-                  <h3>Delares sapiente</h3>
-                  <p>Sint et dolor voluptas minus possimus nostrum. Reiciendis commodi eligendi omnis quideme lorenda</p>
-                </div>
-              </div> <!-- End Icon Box --> {% endcomment %}
-
             </div>
           </div>
 
@@ -136,8 +115,9 @@
       </div>
 
     </section><!-- /About Section -->
-
+    {% endif %}
     <!-- Stats Section -->
+    {% if company_status %}
     <section id="stats" class="stats section">
 
       <img src='{% static "img/stats-bg.jpg" %}' alt="" data-aos="fade-in">
@@ -179,8 +159,9 @@
       </div>
 
     </section><!-- /Stats Section -->
-
+    {% endif %}
     <!-- Services Section -->
+    {% if services %}
     <section id="services" class="services section">
 
       <!-- Section Title -->
@@ -216,63 +197,12 @@
           </div>
           <!-- End Service Item -->
           {% endfor %}
-
-          {% comment %} <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-              <div>
-                <h4 class="title"><a href="services-details.html" class="stretched-link">Dolor Sitema</a></h4>
-                <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-              <div>
-                <h4 class="title"><a href="services-details.html" class="stretched-link">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
-              <div>
-                <h4 class="title"><a href="services-details.html" class="stretched-link">Magni Dolores</a></h4>
-                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
-              <div>
-                <h4 class="title"><a href="services-details.html" class="stretched-link">Nemo Enim</a></h4>
-                <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
-              <div>
-                <h4 class="title"><a href="services-details.html" class="stretched-link">Eiusmod Tempor</a></h4>
-                <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-              </div>
-            </div>
-          </div><!-- End Service Item --> {% endcomment %}
-
         </div>
 
       </div>
 
     </section><!-- /Services Section -->
-
+    {% endif %}
     <!-- Features Section -->
     {% comment %} <section id="features" class="features section">
 
@@ -322,6 +252,7 @@
     </section><!-- /Features Section --> {% endcomment %}
 
     <!-- Portfolio Section -->
+    {% if portfolio %}
     <section id="portfolio" class="portfolio section">
 
       <!-- Section Title -->
@@ -353,87 +284,6 @@
               </div>
             </div><!-- End Portfolio Item -->
             {% endfor %}
-            {% comment %} 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src='{% static "img/masonry-portfolio/masonry-portfolio-2.jpg" %}' class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src='{% static "img/masonry-portfolio/masonry-portfolio-3.jpg" %}' class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src='{% static "img/masonry-portfolio/masonry-portfolio-4.jpg" %}' class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src='{% static "img/masonry-portfolio/masonry-portfolio-5.jpg" %}' class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src='{% static "img/masonry-portfolio/masonry-portfolio-6.jpg" %}' class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src='{% static "img/masonry-portfolio/masonry-portfolio-7.jpg" %}' class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src='{% static "img/masonry-portfolio/masonry-portfolio-8.jpg" %}' class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src='{% static "img/masonry-portfolio/masonry-portfolio-9.jpg" %}' class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-             {% endcomment %}
           </div><!-- End Portfolio Container -->
 
         </div>
@@ -441,7 +291,7 @@
       </div>
 
     </section><!-- /Portfolio Section -->
-
+    {% endif %}
     <!-- Pricing Section -->
     {% comment %} <section id="pricing" class="pricing section">
 
@@ -517,6 +367,7 @@
     </section><!-- /Pricing Section --> {% endcomment %}
 
     <!-- Faq Section -->
+    {% if faq %}
     <section id="faq" class="faq section">
 
       <div class="container">
@@ -544,39 +395,6 @@
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
               {% endfor %}
-              {% comment %} 
-              <div class="faq-item">
-                <h3><span class="num">2.</span> <span>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</span></h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">3.</span> <span>Dolor sit amet consectetur adipiscing elit pellentesque?</span></h3>
-                <div class="faq-content">
-                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">4.</span> <span>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</span></h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">5.</span> <span>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</span></h3>
-                <div class="faq-content">
-                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item--> {% endcomment %}
-
             </div>
 
           </div>
@@ -585,8 +403,9 @@
       </div>
 
     </section><!-- /Faq Section -->
-
+    {% endif %}
     <!-- Team Section -->
+    {% if teams %}
     <section id="team" class="team section">
 
       <!-- Section Title -->
@@ -616,98 +435,12 @@
             </div>
           </div><!-- End Team Member -->
           {% endfor %}
-
-          {% comment %} <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-            <div class="member-img">
-              <img src='{% static "img/team/team-2.jpg" %}' class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Sarah Jhonson</h4>
-              <span>Product Manager</span>
-              <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores exercitationem ut</p>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
-            <div class="member-img">
-              <img src='{% static "img/team/team-3.jpg" %}' class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>William Anderson</h4>
-              <span>CTO</span>
-              <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at qui</p>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
-            <div class="member-img">
-              <img src='{% static "img/team/team-4.jpg" %}' class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
-              <p>Magni voluptatem accusamus assumenda cum nisi aut qui dolorem voluptate sed et veniam quasi quam consectetur</p>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-            <div class="member-img">
-              <img src='{% static "img/team/team-5.jpg" %}' class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Brian Doe</h4>
-              <span>Marketing</span>
-              <p>Qui consequuntur quos accusamus magnam quo est molestiae eius laboriosam sunt doloribus quia impedit laborum velit</p>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
-            <div class="member-img">
-              <img src='{% static "img/team/team-6.jpg" %}' class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Josepha Palas</h4>
-              <span>Operation</span>
-              <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit eligendi cupiditate vel</p>
-            </div>
-          </div><!-- End Team Member --> {% endcomment %}
-
         </div>
 
       </div>
 
     </section><!-- /Team Section -->
-
+    {% endif %}
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section">
 
@@ -728,6 +461,7 @@
     </section><!-- /Call To Action Section -->
 
     <!-- Testimonials Section -->
+    {% if testimonial %}
     <section id="testimonials" class="testimonials section">
 
       <div class="container">
@@ -781,86 +515,6 @@
                   </div>
                 </div><!-- End testimonial item -->
                 {% endfor %}
-                {% comment %} <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <div class="d-flex">
-                      <img src='{% static "img/testimonials/testimonials-2.jpg" %}' class="testimonial-img flex-shrink-0" alt="">
-                      <div>
-                        <h3>Sara Wilsson</h3>
-                        <h4>Designer</h4>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <div class="d-flex">
-                      <img src='{% static "img/testimonials/testimonials-3.jpg" %}' class="testimonial-img flex-shrink-0" alt="">
-                      <div>
-                        <h3>Jena Karlis</h3>
-                        <h4>Store Owner</h4>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <div class="d-flex">
-                      <img src='{% static "img/testimonials/testimonials-4.jpg" %}' class="testimonial-img flex-shrink-0" alt="">
-                      <div>
-                        <h3>Matt Brandon</h3>
-                        <h4>Freelancer</h4>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <div class="d-flex">
-                      <img src='{% static "img/testimonials/testimonials-5.jpg" %}' class="testimonial-img flex-shrink-0" alt="">
-                      <div>
-                        <h3>John Larson</h3>
-                        <h4>Entrepreneur</h4>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div><!-- End testimonial item --> {% endcomment %}
-
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -872,8 +526,9 @@
       </div>
 
     </section><!-- /Testimonials Section -->
-
+    {% endif %}
     <!-- Recent Posts Section -->
+    {% if blog %}
     <section id="recent-posts" class="recent-posts section">
 
       <!-- Section Title -->
@@ -912,66 +567,14 @@
             </article>
           </div><!-- End post list item -->
           {% endfor %}
-
-          {% comment %} <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <article>
-
-              <div class="post-img">
-                <img src='{% static "img/blog/blog-2.jpg" %}' alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Sports</p>
-
-              <h2 class="title">
-                <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src='{% static "img/blog/blog-author-2.jpg" %}' alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Allisa Mayer</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 5, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <article>
-
-              <div class="post-img">
-                <img src='{% static "img/blog/blog-3.jpg" %}' alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Entertainment</p>
-
-              <h2 class="title">
-                <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src='{% static "img/blog/blog-author-3.jpg" %}' alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Mark Dower</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 22, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item --> {% endcomment %}
-
         </div><!-- End recent posts list -->
 
       </div>
 
     </section><!-- /Recent Posts Section -->
-
+    {% endif %}
     <!-- Contact Section -->
+    {% if costomer_service %}
     <section id="contact" class="contact section">
 
       <!-- Section Title -->
@@ -1064,7 +667,7 @@
       </div>
 
     </section><!-- /Contact Section -->
-
+    {% endif %}
   </main>
 
 

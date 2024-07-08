@@ -18,7 +18,8 @@ def Home(request):
     costomer_service=CustomerService.objects.get(id=1)
     blog=Blog.objects.all()
     heading=Heading.objects.get(id=1)
-    return render(request, template_name,{'banner':banner, 'about':about, 'about1':about1, 'company_status':company_status, 'services':services, 'portfolio':portfolio, 'faq':faq, 'teams':teams,'testimonial':testimonial,'costomer_service':costomer_service,'blog':blog,'heading':heading})
+    clients=Clients.objects.all()
+    return render(request, template_name,{'banner':banner, 'about':about, 'about1':about1, 'company_status':company_status, 'services':services, 'portfolio':portfolio, 'faq':faq, 'teams':teams,'testimonial':testimonial,'costomer_service':costomer_service,'blog':blog,'heading':heading,'clients':clients})
 
 
 def BlogDetail(request,slug):

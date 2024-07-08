@@ -148,3 +148,7 @@ class Heading(models.Model):
     contact = models.TextField(max_length=250, null=True, blank=True) 
 
 
+class Clients(models.Model):
+    image=models.ImageField(upload_to="clients/%Y/%m/%d/", null=True, blank=True)
+
+
