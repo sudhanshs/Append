@@ -1,6 +1,9 @@
-Thanks for downloading this template!
+Welcome to Append Solution.
+For run this project some requirements.
 
-Template Name: Append
-Template URL: https://bootstrapmade.com/append-bootstrap-website-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+install python -: sudo apt install python
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+nohup python manage.py runserver "portname" &
+portname is optional. it's required for server.
