@@ -452,7 +452,7 @@
             <div class="text-center">
               <h3>Call To Action</h3>
               <p>{{heading.call_to_action}}</p>
-              <a class="cta-btn" href="#">Call To Action</a>
+              <a class="cta-btn" onclick="callNumber()" >Call To Action</a>
             </div>
           </div>
         </div>
@@ -679,5 +679,10 @@
 
 </body>
  {% include 'web/base/footer.html' %}
+ <script>
+  function callNumber() {
+      window.location.href = "tel:{{costomer_service.tollfree1}}"; // Replace with the desired phone number
+  }
+  </script>
 {% endblock content %}
 </html>

@@ -130,9 +130,11 @@ class GlobalSetting(models.Model):
     global_url_insta = models.URLField(null=True, blank=True)
     global_url_facebook = models.URLField(null=True, blank=True)
     global_url_twitter = models.URLField(null=True, blank=True)
+    global_url_linkedin = models.URLField(null=True, blank=True)
     insta_is_active = models.BooleanField(default=True)
     facebook_is_active = models.BooleanField(default=True)
     twitter_is_active = models.BooleanField(default=True)
+    linkedin_is_active = models.BooleanField(default=True)
     created_at = models.DateField(auto_now_add=True)
     slug = models.CharField(max_length=250, unique=True, default=uuid.uuid4)
 

@@ -11,6 +11,7 @@ urlpatterns = [
     path('about-us/', views.AboutUs, name='about_us'),
     path('contact-us/', views.ContactUS, name='contact_us'),
     path('GivaHome/', views.GivaHome, name='GivaHome'),
+    path('services-list/', views.ServicesList, name='services_list'),
 
 
     ]

@@ -1,0 +1,82 @@
+{% extends 'web/base/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% block content %}
+{% include 'web/base/header.html'%}
+
+<body class="index-page">
+
+
+  <main class="main">
+    <!-- Page Title -->
+     <div></div>
+    <div class="page-title mt-3" data-aos="fade">
+        <div class="heading">
+          <nav class="breadcrumbs">
+              <div class="container">
+              <ol>
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li class="current">Contact Us</li>
+              </ol>
+              </div>
+          </nav>
+        </div>
+      </div><!-- End Page Title -->
+    <!-- Services Section -->
+    {% if services %}
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>{{heading.services}}</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+          {% for i in services %}
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0">
+              {% if i.id == 1 %}
+              <i class="bi bi-briefcase">
+              {% elif i.id == 2 %}
+              <i class="bi bi-card-checklist">
+              {% elif i.id == 3 %}
+              <i class="bi bi-bar-chart">
+              {% elif i.id == 4 %}
+              <i class="bi bi-binoculars">
+              {% else %}
+              <i class="bi bi-brightness-high">
+              {% endif %}
+              </i></div>
+              <div>
+                <h4 class="title"><a class="stretched-link">{{i.title}}</a></h4>
+                <p class="description">{{i.content}}</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Item -->
+          {% endfor %}
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+    {% endif %}
+  </main>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  {% comment %} <div id="preloader"></div> {% endcomment %}
+
+</body>
+ {% include 'web/base/footer.html' %}
+{% endblock content %}
+</html>
