@@ -7,7 +7,7 @@ from django.contrib import messages
 def Home(request):
     template_name="web/home.html"
     globlesetting=GlobalSetting.objects.get(id=1)
-    banner=Banner.objects.get(id=1)
+    banner=Banner.objects.all()
     about=About.objects.all()
     about1=about.get(id=1)
     company_status=CompanyStatus.objects.get(id=1)
